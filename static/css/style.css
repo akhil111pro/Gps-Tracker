@@ -1,0 +1,9 @@
+
+.heading {
+    display: flex;
+  }
+
+.gpsData {
+    flex: 1;
+  }
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Location</title>
+</head>
+<body>
+
+    <h1>GPS Tracker</h1>
+    <p>Latitude: {{ latitude }}</p>
+    <p>Longitude: {{ longitude }}</p>
+    <p>timestamp:{{ timestamp }}</p>
+
+    <div id="map" ></div>
+
+    <script>
+
+        var lat = {{ latitude }};
+        var lon = {{ longitude }};
+        console.log(lat)
+        console.log(lon)
+        map.innerHTML = '<iframe width="1080" height="500" src="https://maps.google.com/maps?q='+lat+','+lon+'&amp;z=15&amp;output=embed"></iframe>';
+    
+             {% comment %} setTimeout(function() {
+            location.reload();
+          }, 1000);     {% endcomment %}
+    </script> 
+</body>
+
+
+</html> 
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Location</title>
+</head>
+
+<body>
+
+    <h1>GPS Tracker</h1>
+    <p>Latitude: {{ latitude }}</p>
+    <p>Longitude: {{ longitude }}</p>
+    <p>timestamp:{{ timestamp }}</p>
+    <div id="map" ></div>
+
+    <script>
+
+        var lat = {{ latitude }};
+        var lon = {{ longitude }};
+        console.log(lat)
+        console.log(lon)
+        map.innerHTML = '<iframe width="1080" height="500" src="https://maps.google.com/maps?q='+lat+','+lon+'&amp;z=15&amp;output=embed"></iframe>';
+    
+             setTimeout(function() {
+
+                var lastlat = 0 ;
+                var lastlon = 0 ;
+                console.log(lastlat);
+
+                if (lastlat != {{ latitude }} || lastlong != {{ longitude }})
+                {   
+                    console.log("hello");
+                    //location.reload();
+                }
+                else{
+                    lastlat = {{ latitude }};
+                    lastlong = {{ longitude }};
+                } 
+
+                console.log(lastlat);
+            
+          }, 1000);    
+    </script> 
+</body>
+
+
+</html> {% endcomment %}
